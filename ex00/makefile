@@ -1,4 +1,4 @@
-SRC = Animal.cpp Cat.cpp Dog.cpp main.cpp
+SRC = main.cpp Bureaucrat.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
