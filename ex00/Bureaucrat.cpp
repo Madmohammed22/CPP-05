@@ -5,6 +5,16 @@ Bureaucrat::Bureaucrat() : name("Bureaucrat")
     std::cout << "Default constructor called" << std::endl;
 }
 
+Bureaucrat::Bureaucrat(int grade, std::string bureaucrat)
+    : grade(grade), name(bureaucrat)
+{
+    if (this->grade < 1)
+        GradeTooHighException();
+    else if (this->grade > 150)
+        GradeTooLowException(); 
+    std::cout << "Parameterize constructor is called." << std::endl;
+}
+
 Bureaucrat::Bureaucrat(const Bureaucrat &b) : name(b.name)
 {
     this->grade = b.grade;
@@ -60,7 +70,7 @@ void Bureaucrat::decrementGrade()
     this->grade++;
 }
 
-std::ostream &operator<<(std::ostream &os, const Bureaucrat& b)
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
 {
     os << b.getName() << " " << b.getGrade();
     return os;

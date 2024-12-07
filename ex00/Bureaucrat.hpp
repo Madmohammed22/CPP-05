@@ -7,6 +7,7 @@ class Bureaucrat
 {
 public:
     Bureaucrat();
+    Bureaucrat(int grade, std::string name);
     Bureaucrat(const Bureaucrat &b);
     Bureaucrat &operator=(const Bureaucrat &other);
     ~Bureaucrat();
@@ -21,8 +22,8 @@ public:
     void decrementGrade();
 
 private:
-    const std::string name;
     int grade;
+    const std::string name;
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat& b);
