@@ -5,6 +5,16 @@ Bureaucrat::Bureaucrat() : name("Bureaucrat"), gotSigned(false), forGradTwoHight
     std::cout << "Default constructor called" << std::endl;
 }
 
+Bureaucrat::Bureaucrat(std::string bureaucrat, int grade)
+    : name(bureaucrat), grade(grade) 
+{
+    if (this->grade < 1)
+        GradeTooHighException();
+    else if (this->grade > 150)
+        GradeTooLowException(); 
+    std::cout << "Parameterize constructor is called." << std::endl;
+}
+
 Bureaucrat::Bureaucrat(const Bureaucrat &b) : name(b.name)
 {
     this->grade = b.grade;

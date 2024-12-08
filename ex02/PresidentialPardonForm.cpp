@@ -13,7 +13,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string file_target)
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &s)
-    : name(s.name), checkIfSigned(s.checkIfSigned), gradeSign(s.gradeSign), gradExecute(s.gradExecute)
+: Form::Form(s), name(s.name), checkIfSigned(s.checkIfSigned), gradeSign(s.gradeSign), gradExecute(s.gradExecute)
 {
     std::cout << "[PresidentialPardonForm] Copy constructor is called" << std::endl;
 }

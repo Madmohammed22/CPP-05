@@ -13,7 +13,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string file_target)
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &s)
-    : name(s.name), checkIfSigned(s.checkIfSigned), gradeSign(s.gradeSign), gradExecute(s.gradExecute)
+    :Form::Form(s), name(s.name), checkIfSigned(s.checkIfSigned), gradeSign(s.gradeSign), gradExecute(s.gradExecute)
 {
     std::cout << "[RobotomyRequestForm] Copy constructor is called" << std::endl;
 }

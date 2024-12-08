@@ -1,8 +1,8 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
-#include "AForm.hpp"
+#include "Form.hpp"
 
-class PresidentialPardonForm : AForm
+class PresidentialPardonForm : public Form
 {
 public:
     PresidentialPardonForm();
@@ -17,6 +17,6 @@ private:
     const int gradeSign;
     const int gradExecute;
     std::string file_target;
-}
+};
 
 #endif

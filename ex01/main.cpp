@@ -3,21 +3,40 @@
 
 int main()
 {
+    {
+        Form form("From", false, 145, 101);
+        Bureaucrat bureaucrat("bureaucrat", 101);
+        try
+        {
+            bureaucrat.decrementGrade();
+            form.beSigned(bureaucrat);
+            bureaucrat.signForm();
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << e.what() << '\n';
+            bureaucrat.signForm();
+            return 1;
+        }
+        std::cout << form << std::endl;
+    }
 
-    Bureaucrat bureaucrat;
-    AForm form;
-    bureaucrat.setGrade(0);
-    try
+    std::cout << "---------------" << std::endl;
     {
-        form.beSigned(bureaucrat);
+        Form form("form", false, 145, 137);
+        Bureaucrat bureaucrat("bureaucrat", 100);
+        try
+        {
+            form.beSigned(bureaucrat);
+            bureaucrat.signForm();
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << e.what() << '\n';
+            bureaucrat.signForm();
+            return 1;
+        }
+        std::cout << form << std::endl;
     }
-    catch (const std::exception &e)
-    {
-        std::cerr << e.what() << '\n';
-        bureaucrat.signForm();
-        return 1;
-    }
-    bureaucrat.signForm();
-    std::cout << form << std::endl;
     return 0;
 }

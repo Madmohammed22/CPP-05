@@ -3,14 +3,16 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-class AForm
+class Form
 {
 
 public:
-    AForm();
-    AForm(const AForm &f);
-    AForm &operator=(const AForm &other);
-    ~AForm();
+    Form();
+    Form(std::string name, bool checkIfSigned
+        , int gradeSign, int gradExecute);
+    Form(const Form &f);
+    Form &operator=(const Form &other);
+    ~Form();
 
 private:
     const std::string name;
@@ -26,7 +28,8 @@ public:
     void GradeTooHighException();
     void GradeTooLowException();
     void beSigned(Bureaucrat &bureaucrat);
+    bool FormUp(Bureaucrat &bureaucrat);
 };
 
-std::ostream &operator<<(std::ostream &os, const AForm &f);
+std::ostream &operator<<(std::ostream &os, const Form &f);
 #endif

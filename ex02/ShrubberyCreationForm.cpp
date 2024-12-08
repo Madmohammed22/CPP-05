@@ -5,7 +5,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : name("Shrubbery"), checkIfSigne
     std::cout << "[ShrubberyCreationForm] Default construct is called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string file_target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string file_target)
     : name("Shrubbery"), checkIfSigned(false), gradeSign(145), gradExecute(137), file_target(file_target)
 {
     std::ofstream file(file_target + "_shrubbery");
@@ -25,7 +25,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string file_target)
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &s)
-    : name(s.name), checkIfSigned(s.checkIfSigned), gradeSign(s.gradeSign), gradExecute(s.gradExecute)
+    :Form::Form(s), name(s.name), checkIfSigned(s.checkIfSigned), gradeSign(s.gradeSign), gradExecute(s.gradExecute)
 {
     std::cout << "[ShrubberyCreationForm] Copy constructor is called" << std::endl;
 }

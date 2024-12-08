@@ -2,12 +2,12 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include "AForm.hpp"
 
 class Bureaucrat
 {
 public:
     Bureaucrat();
+    Bureaucrat(std::string bureaucrat, int grade);
     Bureaucrat(const Bureaucrat &b);
     Bureaucrat &operator=(const Bureaucrat &other);
     ~Bureaucrat();
@@ -22,8 +22,6 @@ public:
     void decrementGrade();
     void signForm();
     std::string writeReason();
-    virtual void execute(Bureaucrat const & executor) const = 0;
-    void executeForm(AForm const & form); // must change to Form
 
 private:
     const std::string name;
