@@ -4,11 +4,13 @@ Form::Form() : name("Bureaucrat"), checkIfSigned(false), gradeSign(1), gradExecu
 {
     std::cout << "Default constructor is called" << std::endl;
 }
+
 Form::Form(std::string name, bool checkIfSigned, int gradeSign, int gradExecute)
     : name(name), checkIfSigned(checkIfSigned), gradeSign(gradeSign), gradExecute(gradExecute)
 {
     std::cout << "Parameterize constructor is called." << std::endl;
 }
+
 Form::Form(const Form &f) : name(f.name), gradeSign(f.gradeSign), gradExecute(f.gradExecute)
 {
     std::cout << "Copy constructor is called" << std::endl;
@@ -63,6 +65,7 @@ void Form::GradeTooLowException()
 {
     throw std::runtime_error("[ERROR] Grade Too Low");
 }
+
 bool Form::FormUp(Bureaucrat &bureaucrat)
 {
     // 100 <= 145

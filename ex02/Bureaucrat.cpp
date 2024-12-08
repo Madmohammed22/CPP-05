@@ -104,3 +104,7 @@ std::string Bureaucrat::writeReason(){
         return "Grade Too Low";
     return "";
 }
+
+// void Bureaucrat::executeForm(Form const & form){
+    
+// }
