@@ -6,23 +6,8 @@ ShrubberyCreationForm::ShrubberyCreationForm() : name("Shrubbery"), checkIfSigne
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string file_target)
-    : name("Shrubbery"), checkIfSigned(false), gradeSign(145), gradExecute(137), file_target(file_target)
+    : name(file_target), checkIfSigned(false), gradeSign(145), gradExecute(137), file_target(file_target)
 {
-    std::string name = file_target + "_shrubbery";
-
-    std::ofstream file(name.c_str());
-    file << "              v .   ._, |_  ., \n"
-            "           `-._  .  /    |/_ \n"
-            "               ||_ y | / \n"
-            "        __.___||, / -.| \n"
-            "           7-,--._||  / / , \n"
-            "          /'     `-. `./ / |/_. \n"
-            "                    |    |// \n"
-            "                    |_    / \n"
-            "                    |-   | \n"
-            "                    |   =| \n"
-            "                    |    | \n"
-            "--------------------/ ,  . -------\";\n";
     std::cout << "Parameterize constructor is called." << std::endl;
 }
 
@@ -71,13 +56,30 @@ bool ShrubberyCreationForm::FormUp(Bureaucrat &bureaucrat)
 void ShrubberyCreationForm::beSigned(Bureaucrat &bureaucrat)
 {
     if (FormUp(bureaucrat) == true)
+    {
+        std::cout << "I was here" << std::endl;
+        std::string name = this->name + "_shrubbery";
+        std::ofstream file(name.c_str());
+        file << "              v .   ._, |_  ., \n"
+                "           `-._  .  /    |/_ \n"
+                "               ||_ y | / \n"
+                "        __.___||, / -.| \n"
+                "           7-,--._||  / / , \n"
+                "          /'     `-. `./ / |/_. \n"
+                "                    |    |// \n"
+                "                    |_    / \n"
+                "                    |-   | \n"
+                "                    |   =| \n"
+                "                    |    | \n"
+                "--------------------/ ,  . -------\";\n";
         bureaucrat.gotSigned = true;
+    }
     this->checkIfSigned = true;
 }
 
 void ShrubberyCreationForm::trueExeption(Bureaucrat const &executor) const
 {
-    std::cout << "-> " << executor.getGrade() << std::endl;
+    // std::cout << "-> " << executor.getGrade() << std::endl;
     if (executor.getGrade() > this->gradeSign || executor.getGrade() > this->gradExecute)
         throw std::runtime_error("[ERROR] Grade Too Low");
     return;

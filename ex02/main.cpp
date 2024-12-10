@@ -3,8 +3,8 @@
 int main()
 {
     {
-        Bureaucrat bureaucrat("bureaucrat", 146);
-        Form *form = new ShrubberyCreationForm("Shrubbery");
+        Bureaucrat bureaucrat("bureaucrat", 100);
+        Form *form = new ShrubberyCreationForm("home");
         try
         {
             form->beSigned(bureaucrat);
