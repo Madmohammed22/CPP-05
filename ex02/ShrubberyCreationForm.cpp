@@ -8,20 +8,6 @@ ShrubberyCreationForm::ShrubberyCreationForm() : name("Shrubbery"), checkIfSigne
 ShrubberyCreationForm::ShrubberyCreationForm(std::string file_target)
     : name(file_target), checkIfSigned(false), gradeSign(145), gradExecute(137), file_target(file_target)
 {
-    std::string name = this->name + "_shrubbery";
-    std::ofstream file(name.c_str());
-    file << "              v .   ._, |_  ., \n"
-            "           `-._  .  /    |/_ \n"
-            "               ||_ y | / \n"
-            "        __.___||, / -.| \n"
-            "           7-,--._||  / / , \n"
-            "          /'     `-. `./ / |/_. \n"
-            "                    |    |// \n"
-            "                    |_    / \n"
-            "                    |-   | \n"
-            "                    |   =| \n"
-            "                    |    | \n"
-            "--------------------/ ,  . -------\";\n";
     std::cout << "[ShrubberyCreationForm] Parameterize constructor is called" << std::endl;
 }
 
@@ -72,6 +58,20 @@ void ShrubberyCreationForm::beSigned(Bureaucrat &bureaucrat)
 {
     if (FormUp(bureaucrat) == true)
     {
+        std::string name = this->name + "_shrubbery";
+        std::ofstream file(name.c_str());
+        file << "              v .   ._, |_  ., \n"
+                "           `-._  .  /    |/_ \n"
+                "               ||_ y | / \n"
+                "        __.___||, / -.| \n"
+                "           7-,--._||  / / , \n"
+                "          /'     `-. `./ / |/_. \n"
+                "                    |    |// \n"
+                "                    |_    / \n"
+                "                    |-   | \n"
+                "                    |   =| \n"
+                "                    |    | \n"
+                "--------------------/ ,  . -------\";\n";
         bureaucrat.gotSigned = true;
     }
     this->checkIfSigned = true;
@@ -79,9 +79,8 @@ void ShrubberyCreationForm::beSigned(Bureaucrat &bureaucrat)
 
 void ShrubberyCreationForm::trueExeption(Bureaucrat const &executor) const
 {
-    // std::cout << "-> " << executor.getGrade() << std::endl;
     if (executor.getGrade() > this->gradeSign || executor.getGrade() > this->gradExecute)
-        throw std::runtime_error("[ERROR] Grade Too Low");
+        GradeTooLowException();
     return;
 }
 

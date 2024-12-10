@@ -11,8 +11,8 @@
 #define CYAN    "\033[36m"      
 #define WHITE   "\033[37m"
 
-#include <iostream>
-// #include "Form.hpp"
+#include "Form.hpp"
+class Form;
 
 class Bureaucrat
 {
@@ -25,15 +25,20 @@ public:
 
 public:
     void GradeTooHighException();
-    void GradeTooLowException();
+    static void GradeTooLowException();
+    void incrementGrade();
+    void decrementGrade();
+
+public:
     std::string getName() const;
     int getGrade() const;
     void setGrade(int _grade);
-    void incrementGrade();
-    void decrementGrade();
-    std::string writeReason();
+    
+public: std::string writeReason();
+
+public:
     void signForm();
-    // void executeForm(Form const &form);
+    void executeForm(Form const &form);
 
 private:
     const std::string name;

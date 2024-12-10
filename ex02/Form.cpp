@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form() : name("Bureaucrat"), checkIfSigned(false), gradeSign(1), gradExecute(150)
+Form::Form() : name("Form"), checkIfSigned(false), gradeSign(1), gradExecute(150)
 {
     std::cout << GREEN << "[Form] Default constructor is called" << RESET << std::endl;
 }
@@ -58,12 +58,12 @@ std::ostream &operator<<(std::ostream &os, const Form &f)
 
 void Form::GradeTooHighException()
 {
-    throw std::runtime_error("[ERROR] Grade Too High");
+    throw std::runtime_error("[Error] Grade Too High");
 }
 
 void Form::GradeTooLowException()
 {
-    throw std::runtime_error("[ERROR] Grade Too Low");
+    throw std::runtime_error("[Error] Grade Too Low");
 }
 
 bool Form::FormUp(Bureaucrat &bureaucrat)

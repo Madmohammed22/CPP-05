@@ -108,17 +108,17 @@ std::string Bureaucrat::writeReason()
     return "";
 }
 
-// void Bureaucrat::executeForm(Form const &form)
-// {
+void Bureaucrat::executeForm(Form const &form)
+{
 
-//     if (this->gotSigned == true)
-//     {
-//         std::cout << this->name << " executed "
-//                   << form.getName() << std::endl;
-//     }
-//     else
-//     {
-//         std::cout << "Error because grade was" << writeReason()
-//                   << std::endl;
-//     }
-// }
+    if (this->gotSigned == true)
+    {
+        std::cout << this->name << " executed "
+                  << form.getName() << std::endl;
+    }
+    else
+    {
+        std::cout << "[Error] because " << writeReason()
+                  << std::endl;
+    }
+}
