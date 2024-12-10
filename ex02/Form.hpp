@@ -1,6 +1,8 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 #include <iostream>
+
+// class Bureaucrat;
 #include "Bureaucrat.hpp"
 
 class Form
@@ -12,7 +14,7 @@ public:
         , int gradeSign, int gradExecute);
     Form(const Form &f);
     Form &operator=(const Form &other);
-    virtual ~Form();
+    virtual ~Form() = 0;
 
 private:
     const std::string name;
@@ -29,8 +31,10 @@ public:
     void GradeTooLowException();
     virtual bool FormUp(Bureaucrat &bureaucrat);
     virtual void beSigned(Bureaucrat &bureaucrat);
+    
     virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &os, const Form &f);
+
 #endif

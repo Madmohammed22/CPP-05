@@ -3,18 +3,19 @@
 int main()
 {
     {
+        Bureaucrat bureaucrat("bureaucrat", 146);
         Form *form = new ShrubberyCreationForm("Shrubbery");
-        std::cout << form->getName() << std::endl;
-        // Bureaucrat bureaucra("bureaucra", 10);
-        // try
-        // {
-        //     // form->beSigned(bureaucra);
-        //     // form->execute(bureaucra);
-        // }
-        // catch (const std::exception &e)
-        // {
-        //     std::cerr << e.what() << '\n';
-        // }
+        try
+        {
+            form->beSigned(bureaucrat);
+            form->execute(bureaucrat);
+            // bureaucrat.executeForm(form);
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+        
     }
     return 0;
 }

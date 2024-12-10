@@ -6,12 +6,12 @@ Bureaucrat::Bureaucrat() : name("Bureaucrat"), gotSigned(false), forGradTwoHight
 }
 
 Bureaucrat::Bureaucrat(std::string bureaucrat, int grade)
-    : name(bureaucrat), grade(grade) 
+    : name(bureaucrat), grade(grade)
 {
     if (this->grade < 1)
         GradeTooHighException();
     else if (this->grade > 150)
-        GradeTooLowException(); 
+        GradeTooLowException();
     std::cout << "Parameterize constructor is called." << std::endl;
 }
 
@@ -58,7 +58,8 @@ void Bureaucrat::GradeTooLowException()
 
 void Bureaucrat::incrementGrade()
 {
-    if (grade <= 1){
+    if (grade <= 1)
+    {
         this->forGradTwoHight = true;
         GradeTooHighException();
     }
@@ -67,7 +68,8 @@ void Bureaucrat::incrementGrade()
 
 void Bureaucrat::decrementGrade()
 {
-    if (grade >= 150){
+    if (grade >= 150)
+    {
         this->forGradeTwoLow = true;
         GradeTooLowException();
     }
@@ -97,7 +99,8 @@ void Bureaucrat::signForm()
     }
 }
 
-std::string Bureaucrat::writeReason(){
+std::string Bureaucrat::writeReason()
+{
     if (this->forGradTwoHight == true)
         return "Grade Too High";
     else if (this->forGradeTwoLow == true)
@@ -105,6 +108,17 @@ std::string Bureaucrat::writeReason(){
     return "";
 }
 
-// void Bureaucrat::executeForm(Form const & form){
-    
+// void Bureaucrat::executeForm(Form const &form)
+// {
+
+//     if (this->gotSigned == true)
+//     {
+//         std::cout << this->name << " executed "
+//                   << form.getName() << std::endl;
+//     }
+//     else
+//     {
+//         std::cout << "Error because grade was" << writeReason()
+//                   << std::endl;
+//     }
 // }

@@ -2,7 +2,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-// #include "Form.hpp"
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -23,11 +23,12 @@ public:
     void decrementGrade();
     std::string writeReason();
     void signForm();
-    // void executeForm(Form const & form);
+    // void executeForm(Form const &form);
 
 private:
     const std::string name;
     int grade;
+
 public:
     bool gotSigned;
     bool forGradTwoHight;
