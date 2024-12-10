@@ -2,31 +2,31 @@
 
 Form::Form() : name("Bureaucrat"), checkIfSigned(false), gradeSign(1), gradExecute(150)
 {
-    std::cout << "Default constructor is called" << std::endl;
+    std::cout << GREEN << "[Form] Default constructor is called" << RESET << std::endl;
 }
 
 Form::Form(std::string name, bool checkIfSigned, int gradeSign, int gradExecute)
     : name(name), checkIfSigned(checkIfSigned), gradeSign(gradeSign), gradExecute(gradExecute)
 {
-    std::cout << "Parameterize constructor is called." << std::endl;
+    std::cout << GREEN << "[Form] Parameterize constructor is called." << RESET << std::endl;
 }
 
 Form::Form(const Form &f) : name(f.name), gradeSign(f.gradeSign), gradExecute(f.gradExecute)
 {
-    std::cout << "Copy constructor is called" << std::endl;
+    std::cout << GREEN << "[Form] Copy constructor is called" << RESET << std::endl;
 }
 
 Form &Form::operator=(const Form &other)
 {
     if (this == &other)
         return *this;
-    std::cout << "Assignment operator is called" << std::endl;
+    std::cout << GREEN << "Assignment operator is called" << RESET << std::endl;
     return *this;
 }
 
 Form::~Form()
 {
-    std::cout << "Distructor is called" << std::endl;
+    std::cout << GREEN << "Distructor is called" << RESET << std::endl;
 }
 
 std::string Form::getName() const

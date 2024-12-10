@@ -3,10 +3,10 @@
 int main()
 {
     {
-        Bureaucrat bureaucrat("bureaucrat", 100);
-        Form *form = new ShrubberyCreationForm("home");
+        Bureaucrat bureaucrat("bureaucrat", 130);
         try
         {
+            Form *form = new ShrubberyCreationForm("home");
             form->beSigned(bureaucrat);
             form->execute(bureaucrat);
             // bureaucrat.executeForm(form);

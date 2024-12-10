@@ -8,12 +8,27 @@ ShrubberyCreationForm::ShrubberyCreationForm() : name("Shrubbery"), checkIfSigne
 ShrubberyCreationForm::ShrubberyCreationForm(std::string file_target)
     : name(file_target), checkIfSigned(false), gradeSign(145), gradExecute(137), file_target(file_target)
 {
-    std::cout << "Parameterize constructor is called." << std::endl;
+    std::string name = this->name + "_shrubbery";
+    std::ofstream file(name.c_str());
+    file << "              v .   ._, |_  ., \n"
+            "           `-._  .  /    |/_ \n"
+            "               ||_ y | / \n"
+            "        __.___||, / -.| \n"
+            "           7-,--._||  / / , \n"
+            "          /'     `-. `./ / |/_. \n"
+            "                    |    |// \n"
+            "                    |_    / \n"
+            "                    |-   | \n"
+            "                    |   =| \n"
+            "                    |    | \n"
+            "--------------------/ ,  . -------\";\n";
+    std::cout << "[ShrubberyCreationForm] Parameterize constructor is called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &s)
     : Form::Form(s), name(s.name), checkIfSigned(s.checkIfSigned), gradeSign(s.gradeSign), gradExecute(s.gradExecute)
 {
+
     std::cout << "[ShrubberyCreationForm] Copy constructor is called" << std::endl;
 }
 
@@ -57,21 +72,6 @@ void ShrubberyCreationForm::beSigned(Bureaucrat &bureaucrat)
 {
     if (FormUp(bureaucrat) == true)
     {
-        std::cout << "I was here" << std::endl;
-        std::string name = this->name + "_shrubbery";
-        std::ofstream file(name.c_str());
-        file << "              v .   ._, |_  ., \n"
-                "           `-._  .  /    |/_ \n"
-                "               ||_ y | / \n"
-                "        __.___||, / -.| \n"
-                "           7-,--._||  / / , \n"
-                "          /'     `-. `./ / |/_. \n"
-                "                    |    |// \n"
-                "                    |_    / \n"
-                "                    |-   | \n"
-                "                    |   =| \n"
-                "                    |    | \n"
-                "--------------------/ ,  . -------\";\n";
         bureaucrat.gotSigned = true;
     }
     this->checkIfSigned = true;

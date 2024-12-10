@@ -2,7 +2,7 @@
 
 Bureaucrat::Bureaucrat() : name("Bureaucrat"), gotSigned(false), forGradTwoHight(false), forGradeTwoLow(false)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << RED <<  "[Bureaucrat] Default constructor called" << RESET <<  std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string bureaucrat, int grade)
@@ -12,13 +12,13 @@ Bureaucrat::Bureaucrat(std::string bureaucrat, int grade)
         GradeTooHighException();
     else if (this->grade > 150)
         GradeTooLowException();
-    std::cout << "Parameterize constructor is called." << std::endl;
+    std::cout << RED << "[Bureaucrat] Parameterize constructor is called." << RESET <<  std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &b) : name(b.name)
 {
     this->grade = b.grade;
-    std::cout << "Copy constructor is called" << std::endl;
+    std::cout << RED << "[Bureaucrat] Copy constructor is called" << RESET << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
@@ -27,13 +27,13 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
     {
         this->grade = other.grade;
     }
-    std::cout << "Assignment operator is called" << std::endl;
+    std::cout <<RED << "[Bureaucrat] Assignment operator is called" << RESET << std::endl;
     return *this;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Distructor is called" << std::endl;
+    std::cout << RED << "[Bureaucrat] Distructor is called" << RESET << std::endl;
 }
 
 std::string Bureaucrat::getName() const
