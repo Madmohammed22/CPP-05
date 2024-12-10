@@ -25,10 +25,13 @@ public:
     bool getCheckIfSigned() const;
     int getGradeSign() const;
     int getGradExecute() const;
+
+public:
     void GradeTooHighException();
     void GradeTooLowException();
     void beSigned(Bureaucrat &bureaucrat);
-    bool FormUp(Bureaucrat &bureaucrat);
+
+public : bool FormUp(Bureaucrat &bureaucrat);
 };
 
 std::ostream &operator<<(std::ostream &os, const Form &f);

@@ -1,6 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : name("Shrubbery"), checkIfSigned(false), gradeSign(145), gradExecute(137)
+ShrubberyCreationForm::ShrubberyCreationForm() 
+    : name("Shrubbery"), checkIfSigned(false), gradeSign(145), gradExecute(137)
 {
     std::cout << "[ShrubberyCreationForm] Default construct is called" << std::endl;
 }
@@ -50,12 +51,16 @@ bool ShrubberyCreationForm::FormUp(Bureaucrat &bureaucrat)
     {
         return true;
     }
-    bureaucrat.forGradTwoHight = true;
+    else{
+        bureaucrat.forGradeTwoLow = true;
+        GradeTooLowException();
+    }
     return false;
 }
 
 void ShrubberyCreationForm::beSigned(Bureaucrat &bureaucrat)
 {
+
     if (FormUp(bureaucrat) == true)
     {
         std::string name = this->name + "_shrubbery";
@@ -74,6 +79,8 @@ void ShrubberyCreationForm::beSigned(Bureaucrat &bureaucrat)
                 "--------------------/ ,  . -------\";\n";
         bureaucrat.gotSigned = true;
     }
+    else
+        GradeTooLowException();
     this->checkIfSigned = true;
 }
 
@@ -86,6 +93,9 @@ void ShrubberyCreationForm::trueExeption(Bureaucrat const &executor) const
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-    if (!(this->checkIfSigned == false && executor.getGrade() <= this->gradeSign && executor.getGrade() <= this->gradExecute))
-        trueExeption(executor);
+    if (executor.getGrade() > this->gradeSign || executor.getGrade() > this->gradExecute)
+        GradeTooLowException();
+    // if (!(this->checkIfSigned == false && executor.getGrade() <= this->gradeSign && executor.getGrade() <= this->gradExecute))
+    //     trueExeption(executor);
 }
+ 

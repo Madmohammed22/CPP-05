@@ -18,6 +18,14 @@ private:
     const int gradeSign;
     const int gradExecute;
     std::string file_target;
+
+public:
+    void beSigned(Bureaucrat &bureaucrat);
+    void execute(Bureaucrat const &executor) const;
+    void trueExeption(Bureaucrat const &executor) const;
+
+public:
+    bool FormUp(Bureaucrat &bureaucrat);
 };
 
 #endif

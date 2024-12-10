@@ -68,7 +68,6 @@ void Form::GradeTooLowException()
 
 bool Form::FormUp(Bureaucrat &bureaucrat)
 {
-    // 100 <= 145
     if (bureaucrat.getGrade() < 1)
     {
         bureaucrat.forGradTwoHight = true;
@@ -84,13 +83,16 @@ bool Form::FormUp(Bureaucrat &bureaucrat)
     {
         return true;
     }
-    bureaucrat.forGradTwoHight = true;
+    else
+        bureaucrat.forGradeTwoLow = true;
     return false;
 }
 
 void Form::beSigned(Bureaucrat &bureaucrat)
 {
-    if (FormUp(bureaucrat) == true)
+    if (FormUp(bureaucrat) == true){
         bureaucrat.gotSigned = true;
-    this->checkIfSigned = true;
+        this->checkIfSigned = true;
+    }
+    return;
 }

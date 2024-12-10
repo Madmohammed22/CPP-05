@@ -2,17 +2,30 @@
 
 Bureaucrat::Bureaucrat() : name("Bureaucrat"), gotSigned(false), forGradTwoHight(false), forGradeTwoLow(false)
 {
-    std::cout << RED <<  "[Bureaucrat] Default constructor called" << RESET <<  std::endl;
+    std::cout << RED << "[Bureaucrat] Default constructor called" << RESET << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string bureaucrat, int grade)
     : name(bureaucrat), grade(grade)
 {
-    if (this->grade < 1)
-        GradeTooHighException();
-    else if (this->grade > 150)
-        GradeTooLowException();
-    std::cout << RED << "[Bureaucrat] Parameterize constructor is called." << RESET <<  std::endl;
+    try
+    {
+        if (this->grade < 1)
+        {
+            GradeTooHighException();
+        }
+        else if (this->grade > 150)
+        {
+            GradeTooLowException();
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+        _Exit(1);
+    }
+
+    std::cout << RED << "[Bureaucrat] Parameterize constructor is called." << RESET << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &b) : name(b.name)
@@ -27,7 +40,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
     {
         this->grade = other.grade;
     }
-    std::cout <<RED << "[Bureaucrat] Assignment operator is called" << RESET << std::endl;
+    std::cout << RED << "[Bureaucrat] Assignment operator is called" << RESET << std::endl;
     return *this;
 }
 
@@ -87,18 +100,6 @@ void Bureaucrat::setGrade(int _grade)
     this->grade = _grade;
 }
 
-void Bureaucrat::signForm()
-{
-    if (this->gotSigned)
-    {
-        std::cout << this->name << " signed form" << std::endl;
-    }
-    else
-    {
-        std::cout << this->name << " couldn’t sign form because " << writeReason() << std::endl;
-    }
-}
-
 std::string Bureaucrat::writeReason()
 {
     if (this->forGradTwoHight == true)
@@ -110,7 +111,7 @@ std::string Bureaucrat::writeReason()
 
 void Bureaucrat::executeForm(Form const &form)
 {
-
+    this->signForm();
     if (this->gotSigned == true)
     {
         std::cout << this->name << " executed "
@@ -120,5 +121,17 @@ void Bureaucrat::executeForm(Form const &form)
     {
         std::cout << "[Error] because " << writeReason()
                   << std::endl;
+    }
+}
+
+void Bureaucrat::signForm()
+{
+    if (this->gotSigned == true)
+    {
+        std::cout << this->name << " signed form" << std::endl;
+    }
+    else
+    {
+        std::cout << this->name << " couldn’t sign form because " << writeReason() << std::endl;
     }
 }
