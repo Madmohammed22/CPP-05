@@ -35,6 +35,7 @@ int hashit(std::string name_form)
 Form *executeClassTarget(std::string name_form, std::string target_form)
 {
     Form *result = NULL;
+
     switch (hashit(name_form))
     {
     case 1:

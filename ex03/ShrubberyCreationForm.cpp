@@ -84,6 +84,26 @@ void ShrubberyCreationForm::beSigned(Bureaucrat &bureaucrat)
     this->checkIfSigned = true;
 }
 
+ 
+std::string ShrubberyCreationForm::getName() const
+{
+    return this->name;
+}
+
+bool ShrubberyCreationForm::getCheckIfSigned() const
+{
+    return this->checkIfSigned;
+}
+int ShrubberyCreationForm::getGradeSign() const
+{
+    return this->gradeSign;
+}
+
+int ShrubberyCreationForm::getGradExecute() const
+{
+    return this->gradExecute;
+}
+
 void ShrubberyCreationForm::trueExeption(Bureaucrat const &executor) const
 {
     if (executor.getGrade() > this->gradeSign || executor.getGrade() > this->gradExecute)
@@ -98,4 +118,3 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     // if (!(this->checkIfSigned == false && executor.getGrade() <= this->gradeSign && executor.getGrade() <= this->gradExecute))
     //     trueExeption(executor);
 }
- 

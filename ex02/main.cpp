@@ -6,7 +6,7 @@ int main()
 {
     {
         Form *form = new ShrubberyCreationForm("home");
-        Bureaucrat *bureaucrat = new Bureaucrat("Bureaucrat", 147);
+        Bureaucrat *bureaucrat = new Bureaucrat("Bureaucrat", 130);
         try
         {
             form->beSigned(*bureaucrat);
@@ -46,7 +46,7 @@ int main()
     std::cout << "----------------------" << std::endl;
     {
         Form *form = new PresidentialPardonForm("home");
-        Bureaucrat *bureaucrat = new Bureaucrat("Bureaucrat", 2);
+        Bureaucrat *bureaucrat = new Bureaucrat("Bureaucrat", 55);
         try
         {
             form->beSigned(*bureaucrat);

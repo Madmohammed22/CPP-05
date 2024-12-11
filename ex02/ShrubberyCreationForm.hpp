@@ -23,7 +23,13 @@ private:
 public:
     virtual void beSigned(Bureaucrat &bureaucrat);
     void execute(Bureaucrat const &executor) const;
-    bool FormUp(Bureaucrat& bureaucrat);
+    bool FormUp(Bureaucrat &bureaucrat);
     void trueExeption(Bureaucrat const &executor) const;
+
+public:
+    std::string getName() const;
+    bool getCheckIfSigned() const;
+    int getGradeSign() const;
+    int getGradExecute() const;
 };
 #endif

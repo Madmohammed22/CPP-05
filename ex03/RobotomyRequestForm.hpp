@@ -26,6 +26,12 @@ public:
 
 public:
     bool FormUp(Bureaucrat &bureaucrat);
+
+public:
+    std::string getName() const;
+    bool getCheckIfSigned() const;
+    int getGradeSign() const;
+    int getGradExecute() const;
 };
 
 #endif

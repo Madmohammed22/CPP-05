@@ -22,10 +22,10 @@ private:
     const int gradExecute;
 
 public:
-    std::string getName() const;
-    bool getCheckIfSigned() const;
-    int getGradeSign() const;
-    int getGradExecute() const;
+    virtual std::string getName() const;
+    virtual bool getCheckIfSigned() const;
+    virtual int getGradeSign() const;
+    virtual int getGradExecute() const;
 
 public:
 

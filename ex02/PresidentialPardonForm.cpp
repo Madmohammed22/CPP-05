@@ -31,6 +31,26 @@ PresidentialPardonForm::~PresidentialPardonForm()
     std::cout << "[PresidentialPardonForm] Distructor is called" << std::endl;
 }
 
+std::string PresidentialPardonForm::getName() const
+{
+    return this->name;
+}
+
+bool PresidentialPardonForm::getCheckIfSigned() const
+{
+    return this->checkIfSigned;
+}
+int PresidentialPardonForm::getGradeSign() const
+{
+    return this->gradeSign;
+}
+
+int PresidentialPardonForm::getGradExecute() const
+{
+    return this->gradExecute;
+}
+
+
 bool PresidentialPardonForm::FormUp(Bureaucrat &bureaucrat)
 {
     if (bureaucrat.getGrade() < 1)

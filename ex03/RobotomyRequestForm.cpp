@@ -93,3 +93,22 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
         std::cout << "robotomy failed" << std::endl;
 
 }
+
+std::string RobotomyRequestForm::getName() const
+{
+    return this->name;
+}
+
+bool RobotomyRequestForm::getCheckIfSigned() const
+{
+    return this->checkIfSigned;
+}
+int RobotomyRequestForm::getGradeSign() const
+{
+    return this->gradeSign;
+}
+
+int RobotomyRequestForm::getGradExecute() const
+{
+    return this->gradExecute;
+}

@@ -9,8 +9,7 @@ class Form
 
 public:
     Form();
-    Form(std::string name, bool checkIfSigned
-        , int gradeSign, int gradExecute);
+    Form(std::string name, bool checkIfSigned, int gradeSign, int gradExecute);
     Form(const Form &f);
     Form &operator=(const Form &other);
     virtual ~Form() = 0;
@@ -22,10 +21,10 @@ private:
     const int gradExecute;
 
 public:
-    std::string getName() const;
-    bool getCheckIfSigned() const;
-    int getGradeSign() const;
-    int getGradExecute() const;
+    virtual std::string getName() const;
+    virtual bool getCheckIfSigned() const;
+    virtual int getGradeSign() const;
+    virtual int getGradExecute() const;
 
 public:
 

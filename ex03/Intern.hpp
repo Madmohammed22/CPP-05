@@ -1,7 +1,6 @@
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
-#include <iostream>
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"

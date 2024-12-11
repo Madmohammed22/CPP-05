@@ -77,3 +77,22 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
     }
     std::cout << this->name << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
+
+std::string PresidentialPardonForm::getName() const
+{
+    return this->name;
+}
+
+bool PresidentialPardonForm::getCheckIfSigned() const
+{
+    return this->checkIfSigned;
+}
+int PresidentialPardonForm::getGradeSign() const
+{
+    return this->gradeSign;
+}
+
+int PresidentialPardonForm::getGradExecute() const
+{
+    return this->gradExecute;
+}

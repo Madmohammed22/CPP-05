@@ -4,7 +4,7 @@ OBJ = $(SRC:.cpp=.o)
 
 CC = c++
 
-CppFLAGS = -Wall -Wextra -Werror -g3
+CppFLAGS =  -g3
 
 CppVERSION = -std=c++98
 
