@@ -50,11 +50,7 @@ Form *executeClassTarget(std::string name_form, std::string target_form)
         std::cout << "Invalid form_name" << std::endl;
         return NULL;
     }
-
-    if (result != NULL){
-        return result;
-    }
-    return NULL;
+    return result;
 }
 
 Form *Intern::makeForm(std::string name_form, std::string target_form)
